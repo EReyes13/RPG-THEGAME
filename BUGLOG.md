@@ -17,6 +17,8 @@ Name: Elio Reyes
     fix: I added a break that occurs when the monster is defeated. 
 
 ## Bug #4 
+    Symptom: potion count is not being subtracted and shown properly.
+    Cause: 
 ## Bug #5
 
 ## Bug #6
