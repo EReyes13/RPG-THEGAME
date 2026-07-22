@@ -35,7 +35,7 @@ int main() {
         std::cout << "\n--- Battle " << (i + 1) << ": a wild "
                   << monster.name << " appears! ---\n";
 
-        while (hero.isAlive() || monster.isAlive()) {
+        while (hero.isAlive() && monster.isAlive()) {
             std::cout << "\n";
             hero.printStatus();
             monster.printStatus();
@@ -56,15 +56,22 @@ int main() {
                 hero.takeDamage(dmg);
                 std::cout << "The " << monster.name << " strikes back!\n";
             }
+            else
+            {
+                wins++;
+                break;
+                
+            }
         }
 
         if (hero.isAlive()) {
             std::cout << ">>> You defeated the " << monster.name << "! <<<\n";
-            wins++;
+            
         } else {
             std::cout << ">>> " << hero.name << " has fallen... <<<\n";
             break;
         }
+        
     }
 
     std::cout << "\n=== GAME OVER — monsters defeated: " << wins << " ===\n";
